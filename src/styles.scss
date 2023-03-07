@@ -84,6 +84,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin-top: 10px;
   @extend .container;
 }
+
+a[mdc-button] {
+  text-underline: none;
+}
+
 .active-link {
   font-weight: bold;
   background: rgba(0, 0, 0, 0.04);

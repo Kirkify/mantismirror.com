@@ -8,8 +8,12 @@ const routes: Routes = [
     loadChildren: () => import('./modules/landing/landing.module').then(m => m.LandingModule)
   },
   {
-    path: AppRoutes.About,
+    path: AppRoutes.AboutUs,
     loadChildren: () => import('./modules/about/about.module').then(m => m.AboutModule)
+  },
+  {
+    path: AppRoutes.Testimonials,
+    loadChildren: () => import('./modules/testimonials/testimonials.module').then(m => m.TestimonialsModule)
   },
 ];
 

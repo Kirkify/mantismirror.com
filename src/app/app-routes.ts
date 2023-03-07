@@ -1,3 +1,4 @@
 export const AppRoutes = {
-  About: 'about'
+  AboutUs: 'about-us',
+  Testimonials: 'testimonials'
 }
