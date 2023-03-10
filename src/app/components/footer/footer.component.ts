@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {environment} from '../../../environments/environment';
+import {AppRoutes} from '../../app-routes';
 
 @Component({
   selector: 'app-footer',
@@ -8,4 +9,5 @@ import {environment} from '../../../environments/environment';
 })
 export class FooterComponent {
   appName = environment.appName;
+  appRoutes = AppRoutes;
 }

@@ -6,13 +6,18 @@
                [opened]="(isHandset$ | async) === false">
     <mat-toolbar>
       <a routerLink='/' class='d-flex align-items-center'>
-<!--        <img src="assets/img/logo-sm.png" alt="logo">-->
-        {{ appName }}
+        <img src="/assets/img/stick-mantis-mk.jpg" alt="logo">
       </a>
     </mat-toolbar>
     <mat-nav-list>
+      <a mat-list-item [routerLink]="'/'" routerLinkActive='active-link'>Home Page</a>
+      <a mat-list-item [routerLink]="'/' + appRoutes.Problem" routerLinkActive='active-link'>The Problem</a>
+      <a mat-list-item [routerLink]="'/' + appRoutes.Solution" routerLinkActive='active-link'>The Solution</a>
       <a mat-list-item [routerLink]="'/' + appRoutes.AboutUs" routerLinkActive='active-link'>About Us</a>
       <a mat-list-item [routerLink]="'/' + appRoutes.Testimonials" routerLinkActive='active-link'>Testimonials</a>
+      <a mat-list-item [routerLink]="'/' + appRoutes.FAQ" routerLinkActive='active-link'>F.A.Q</a>
+      <a mat-list-item [routerLink]="'/' + appRoutes.Contact" routerLinkActive='active-link'>Contact Us</a>
+
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -25,7 +30,20 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      The Mantis Mirror System
+
+      <span *ngIf="!(isHandset$ | async)">The Mantis Mirror System - "A Safer Way to Bicycle!"</span>
+
+      <ng-container *ngIf="isMedium$ | async">
+        <span class="fill-space"></span>
+
+        <a mat-button [routerLink]="appRoutes.Problem">The Problem</a>
+        <a mat-button mat-raised-button [routerLink]="appRoutes.Solution">The Solution</a>
+        <a mat-button [routerLink]="appRoutes.AboutUs">About Us</a>
+        <a mat-button [routerLink]="appRoutes.Testimonials">Testimonials</a>
+        <a mat-button [routerLink]="appRoutes.FAQ">F.A.Q</a>
+        <a mat-button [routerLink]="appRoutes.Contact">Contact Us</a>
+      </ng-container>
+
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>

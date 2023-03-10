@@ -14,6 +14,11 @@ export class AppComponent {
   appRoutes = AppRoutes;
 
   private breakpointObserver = inject(BreakpointObserver);
+  isMedium$ = this.breakpointObserver.observe('(min-width: 1100px)')
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
 
   isHandset$ = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(

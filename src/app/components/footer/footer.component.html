@@ -1,6 +1,6 @@
 <!-- Footer -->
 <footer class="container text-center pt-5">
-  <section class="text-center">
+  <section class="text-center d-none">
     <div>
       <span>Get connected with us on social networks:</span>
     </div>
@@ -33,71 +33,44 @@
     <div class="text-center text-md-start mt-5">
       <!-- Grid row -->
       <div class="row mt-3">
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <!-- Content -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3 text-secondary"></i>{{ appName }}
-          </h6>
-          <p>
-            Here you can use rows and columns to organize your footer content. Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit.
-          </p>
-        </div>
-        <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            Products
-          </h6>
-          <p>
-            <a href="#!" class="text-reset">A</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">R</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">V</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">L</a>
-          </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <div class="col-md-6 mx-auto mb-4 text-center">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
             Useful links
           </h6>
           <p>
-            <a href="#!" class="text-reset">P</a>
+            <a [routerLink]="appRoutes.Problem" class="text-reset">The Problem</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">S</a>
+            <a [routerLink]="appRoutes.Solution" class="text-reset">The Solution</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">O</a>
+            <a [routerLink]="appRoutes.AboutUs" class="text-reset">About Us</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">H</a>
+            <a [routerLink]="appRoutes.Testimonials" class="text-reset">Testimonials</a>
+          </p>
+          <p>
+            <a [routerLink]="appRoutes.FAQ" class="text-reset">F.A.Q</a>
+          </p>
+          <p>
+            <a [routerLink]="appRoutes.Contact" class="text-reset">Contact Us</a>
           </p>
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <div class="col-md-6 mx-auto mb-md-0 mb-4 text-center">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-          <p><i class="fas fa-home me-3 text-secondary"></i>Address</p>
+          <p><i class="fas fa-home me-3 text-secondary"></i>Ottawa, Canada</p>
           <p>
             <i class="fas fa-envelope me-3 text-secondary"></i>
-            Email
+            mkelly@wemeanfitness.com
           </p>
-          <p><i class="fas fa-phone me-3 text-secondary"></i>Phone Number</p>
+          <p><i class="fas fa-phone me-3 text-secondary"></i>613-830-1300</p>
         </div>
         <!-- Grid column -->
       </div>
