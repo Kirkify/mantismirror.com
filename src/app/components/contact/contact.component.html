@@ -1,8 +1,8 @@
 <div class="rootContainer">
   <div class="row">
-    <div class="col-md-12 text-center">
+    <div class="col-md-12">
       <!-- Links -->
-      <h2>Contact Us</h2>
+      <h4 class="mb-4">Please feel free to contact us using one of the methods below, or fill in our contact form below.</h4>
       <p><i class="fas fa-home me-3 text-secondary"></i>Ottawa, Canada</p>
       <p>
         <i class="fas fa-envelope me-3 text-secondary"></i>
@@ -11,4 +11,71 @@
       <p><i class="fas fa-phone me-3 text-secondary"></i>613-830-1300</p>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-12 my-4">
+      <h4>Contact Form</h4>
+    </div>
+  </div>
+
+  <form #form [formGroup]="formGroup" action="https://mailthis.to/mkelly@wemeanfitness.com" method="POST">
+    <input type="hidden" name="_subject" value="Mantis Contact Request">
+    <input type="hidden" name="_honeypot" value="">
+    <input type="hidden" name="_confirmation" value="Your message was sent successfully.">
+
+    <div class="row">
+      <!-- EMAIL -->
+      <mat-form-field class="col-md-6 mb-2">
+        <mat-label >Email</mat-label>
+        <input #emailInput
+               type='email'
+               name="_replyto"
+               matInput
+               [formControl]="formGroup.controls.email">
+        <mat-error
+                   *ngIf="formGroup.controls.email.hasError('required')">
+          An email address is required
+        </mat-error>
+        <mat-error
+                   *ngIf="formGroup.controls.email.hasError('email')">
+          The email address entered is invalid.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- USERNAME -->
+      <mat-form-field class="col-md-6 mb-2">
+        <mat-label >Name</mat-label>
+        <input matInput
+               type='text'
+               name="name"
+               [formControl]="formGroup.controls.name">
+        <mat-error  *ngIf="formGroup.controls.name.hasError('required')">
+          A name is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <!-- PASSWORD -->
+      <mat-form-field class="col-12 mb-2">
+        <mat-label >Message</mat-label>
+        <textarea matInput
+                  name="message"
+                  cdkTextareaAutosize
+                  cdkAutosizeMinRows="3"
+                  cdkAutosizeMaxRows="7"
+                  placeholder='What would you like to say?'
+                  [formControl]="formGroup.controls.message"></textarea>
+        <mat-error  *ngIf="formGroup.controls.message.hasError('required')">
+          A message is required.
+        </mat-error>
+        <mat-error  *ngIf="formGroup.controls.message.hasError('minlength')">
+          A message must have a minimum length of 1 or more characters.
+        </mat-error>
+      </mat-form-field>
+
+    </div>
+
+    <button mat-raised-button color="primary" type="submit" (click)="form.submit()">Send Message</button>
+  </form>
 </div>

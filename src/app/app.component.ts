@@ -19,10 +19,4 @@ export class AppComponent {
       map(result => result.matches),
       shareReplay()
     );
-
-  isHandset$ = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches),
-      shareReplay()
-    );
 }

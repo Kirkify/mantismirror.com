@@ -3,8 +3,28 @@ img {
 }
 
 .landingImage {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 40px;
   background-color: black;
-  width: 50%;
+  width: 80%;
+}
+
+.bikeAccident {
+  width: 100%;
+}
+
+.avoidThisContainer {
+  width: 65%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.avoidThis {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 5px;
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AppRoutes} from '../../app-routes';
 
 @Component({
   selector: 'app-problem',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./problem.component.scss']
 })
 export class ProblemComponent {
-
+  appRoutes = AppRoutes;
 }

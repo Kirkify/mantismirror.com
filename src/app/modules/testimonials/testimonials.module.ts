@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TestimonialsRoutingModule } from './testimonials-routing.module';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import {AngularMaterialModule} from '../angular-material/angular-material.module';
+import {SolutionButtonModule} from '../solution-button/solution-button.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import {AngularMaterialModule} from '../angular-material/angular-material.module
   imports: [
     CommonModule,
     TestimonialsRoutingModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    SolutionButtonModule
   ]
 })
 export class TestimonialsModule { }

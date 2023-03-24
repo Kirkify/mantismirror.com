@@ -10,6 +10,9 @@ import { ProblemComponent } from './components/problem/problem.component';
 import { SolutionComponent } from './components/solution/solution.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FaqComponent } from './components/faq/faq.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {SolutionButtonModule} from './modules/solution-button/solution-button.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,11 @@ import { FaqComponent } from './components/faq/faq.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    HttpClientModule,
+    AngularMaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    SolutionButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

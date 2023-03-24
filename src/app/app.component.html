@@ -1,9 +1,7 @@
 <mat-sidenav-container class="sidenav-container" fullscreen>
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
+  <mat-sidenav #drawer class="sidenav"
                (click)="drawer.mode === 'side' || drawer.close()"
-               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-               [mode]="(isHandset$ | async) ? 'over' : 'side'"
-               [opened]="(isHandset$ | async) === false">
+               mode="over">
     <mat-toolbar>
       <a routerLink='/' class='d-flex align-items-center'>
         <img src="/assets/img/stick-mantis-mk.jpg" alt="logo">
@@ -12,10 +10,10 @@
     <mat-nav-list>
       <a mat-list-item [routerLink]="'/'" routerLinkActive='active-link'>Home Page</a>
       <a mat-list-item [routerLink]="'/' + appRoutes.Problem" routerLinkActive='active-link'>The Problem</a>
-      <a mat-list-item [routerLink]="'/' + appRoutes.Solution" routerLinkActive='active-link'>The Solution</a>
-      <a mat-list-item [routerLink]="'/' + appRoutes.AboutUs" routerLinkActive='active-link'>About Us</a>
+      <a mat-list-item [routerLink]="'/' + appRoutes.Solution" routerLinkActive='active-link'>How it Works</a>
       <a mat-list-item [routerLink]="'/' + appRoutes.Testimonials" routerLinkActive='active-link'>Testimonials</a>
       <a mat-list-item [routerLink]="'/' + appRoutes.FAQ" routerLinkActive='active-link'>F.A.Q</a>
+      <a mat-list-item [routerLink]="'/' + appRoutes.AboutUs" routerLinkActive='active-link'>About Us</a>
       <a mat-list-item [routerLink]="'/' + appRoutes.Contact" routerLinkActive='active-link'>Contact Us</a>
 
     </mat-nav-list>
@@ -27,20 +25,25 @@
         aria-label="Toggle side navigation drawer"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+        *ngIf="!(isMedium$ | async)">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
 
-      <span *ngIf="!(isHandset$ | async)">The Mantis Mirror System - "A Safer Way to Bicycle!"</span>
+      <span *ngIf="!(isMedium$ | async)">The Mantis Mirror System</span>
+
+      <div *ngIf="isMedium$ | async" routerLink="/" class="d-flex flex-column justify-content-center align-content-center">
+        <span class="mantisTitle">The Mantis Mirror System</span>
+        <span class="text-center">(A Safer Way to Bicycle!)</span>
+      </div>
 
       <ng-container *ngIf="isMedium$ | async">
         <span class="fill-space"></span>
 
         <a mat-button [routerLink]="appRoutes.Problem">The Problem</a>
-        <a mat-button mat-raised-button [routerLink]="appRoutes.Solution">The Solution</a>
-        <a mat-button [routerLink]="appRoutes.AboutUs">About Us</a>
+        <a mat-button [routerLink]="appRoutes.Solution">How it Works</a>
         <a mat-button [routerLink]="appRoutes.Testimonials">Testimonials</a>
         <a mat-button [routerLink]="appRoutes.FAQ">F.A.Q</a>
+        <a mat-button [routerLink]="appRoutes.AboutUs">About Us</a>
         <a mat-button [routerLink]="appRoutes.Contact">Contact Us</a>
       </ng-container>
 

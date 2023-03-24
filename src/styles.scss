@@ -111,3 +111,13 @@ a.mdc-button {
 img {
   width: 100%;
 }
+
+mat-expansion-panel-header .mat-expansion-indicator::after {
+  content: "+";
+  border: 0;
+  transform: none;
+}
+
+.mat-expansion-panel-header.mat-expanded .mat-expansion-indicator::after {
+  content: "-";
+}

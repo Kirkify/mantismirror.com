@@ -2,14 +2,22 @@
   <div class="rootContainer">
     <div class="row">
       <div class="col-12 text-center">
-        <h2>Increasing Bicycle Safety and Enjoyment, by Eliminating Rear Blind Spots while Riding.</h2>
+        <h2>Increasing Bicycle Safety and Enjoyment, by Eliminating Rear Blind Spots.</h2>
       </div>
     </div>
   </div>
   <div class="landingImage container-fluid px-0">
     <div class="row">
       <div class="col-12 text-center">
-        <img src="/assets/img/bike-accident.jpg" />
+        <img class="mainImage" src="/assets/img/mantis-mirror.jpg" />
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center avoidThisContainer">
+        <h4 class="avoidThis">AVOID THIS!!!</h4>
+        <img class="bikeAccident" src="/assets/img/bike-accident.jpg" />
       </div>
     </div>
   </div>
@@ -27,13 +35,32 @@
           Although the traditional bicycle mirror can help, it has many limitations – so many, that many bike riders have simply given up on using a mirror.
           One major limitation of existing bike mirrors, are their inability to allow the rider to see from any position on the bike, unless the mirror is readjusted while riding – a very DANGEROUS THING TO DO!
         </p>
-        <p>
-          As for trying to look over your shoulder; or under your arm, these are not good solutions as it offers limited information to the rider; takes more energy to do so; can affect your cadence; let alone, turning around can negatively affect a riders balance.
-          The science and stats are there to substantiate these problems, so there has to be a better solution!
-        </p>
-        <a [routerLink]="appRoutes.Solution" class="w-100" mat-button mat-raised-button color="primary">The Solution</a>
+        <app-solution-button></app-solution-button>
       </div>
     </div>
   </div>
 
 </section>
+
+<!--<div class="rootContainer">-->
+<!--  <div class="row">-->
+<!--    <div class="col-12">-->
+<!--      <h1>A Safer Way To Bike</h1>-->
+<!--      <p>-->
+<!--        Nearly 400,000 preventable bicycle accidents occur every year, with many of them being caused from rear approaching vehicles.-->
+<!--        Sadly, bike riding fatalities have steadily been rising over the last decade, with nearly 1,300 deaths occurring during 2020,-->
+<!--        in the U.S. alone. Bicycle deaths accounted for 2% of all motor-vehicle traffic fatalities (National Safety Council 2022)-->
+<!--      </p>-->
+<!--      <p>-->
+<!--        With the increasing problem of Distracted Driving, it has become even more important for riders to know what’s approaching from behind.-->
+<!--        Although the traditional bicycle mirror can help, it has many limitations – so many, that many bike riders have simply given up on using a mirror.-->
+<!--        One major limitation of existing bike mirrors, are their inability to allow the rider to see from any position on the bike, unless the mirror is readjusted while riding – a very DANGEROUS THING TO DO!-->
+<!--      </p>-->
+<!--      <p>-->
+<!--        As for trying to look over your shoulder; or under your arm, these are not good solutions as it offers limited information to the rider; takes more energy to do so; can affect your cadence; let alone, turning around can negatively affect a riders balance.-->
+<!--        The science and stats are there to substantiate these problems, so there has to be a better solution!-->
+<!--      </p>-->
+<!--      <a [routerLink]="appRoutes.Solution" class="w-100" mat-button mat-raised-button color="primary">The Solution</a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
