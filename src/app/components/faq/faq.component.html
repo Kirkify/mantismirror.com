@@ -23,6 +23,8 @@
           </mat-expansion-panel-header>
           The Mantis Mirror System is not positioned directly in front of your eyes, rather it is
           angled off to the side. Thus there is no blocking of forward vision.
+          <button *ngIf="!imageVisible" (click)="imageVisible = !imageVisible" mat-button class="mantis">Click Here To See</button>
+          <img class="mantis" *ngIf="imageVisible" src="/assets/img/mantis-vision-intersection.png" />
         </mat-expansion-panel>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
