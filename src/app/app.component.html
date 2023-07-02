@@ -4,7 +4,7 @@
                mode="over">
     <mat-toolbar>
       <a routerLink='/' class='d-flex align-items-center'>
-        <img src="/assets/img/stick-mantis-mk.jpg" alt="logo">
+        <img src="/assets/img/mantis-mirror1.png" alt="logo">
       </a>
     </mat-toolbar>
     <mat-nav-list>
@@ -35,6 +35,10 @@
         <span class="mantisTitle">The Mantis Mirror System</span>
         <span class="text-center">(A Safer Way to Bicycle!)</span>
       </div>
+
+      <a *ngIf="isMedium$ | async" routerLink='/' class='d-flex align-items-center'>
+        <img src="/assets/img/mantis-mirror1.png" alt="logo">
+      </a>
 
       <ng-container *ngIf="isMedium$ | async">
         <span class="fill-space"></span>
