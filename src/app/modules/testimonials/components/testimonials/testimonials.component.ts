@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./testimonials.component.scss']
 })
 export class TestimonialsComponent {
-  panelOpenState = true;
+
 }

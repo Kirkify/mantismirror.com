@@ -1,13 +1,15 @@
-import {Component, inject} from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import {FormControl, NonNullableFormBuilder, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
+import { ActivatedRoute } from "@angular/router";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
   private _http = inject(HttpClient);
   private _fb = inject(NonNullableFormBuilder);
   formGroup = this._fb.group({
@@ -32,21 +34,12 @@ export class ContactComponent {
     }),
   })
 
-  submit() {
+  private success = inject(ActivatedRoute).snapshot.queryParams['success'];
+  private snackBar = inject(MatSnackBar);
 
-    if (this.formGroup.invalid) {
-      return;
+  ngOnInit() {
+    if (this.success) {
+      this.snackBar.open('Message sent successfully', undefined, { duration: 3000 });
     }
-
-    this._http.post('https://mailthis.to/paolomessina613@gmail.com', {
-      email: 'test@test.co',
-      message: 'Test Message',
-      _subject: 'Testing Service',
-      _after: 'https://mantismirror.com/contact-us',
-      _honeypot: '',
-      _confirmation: 'Your message was sent successfully.'
-    }, { responseType: 'text' }).subscribe(res => {
-      location.href = 'https://mailthis.to/confirm'
-    })
   }
 }
